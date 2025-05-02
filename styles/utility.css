@@ -11,7 +11,17 @@
 }
 
 .px-lg {
-    padding-inline: var(--px-lg);
+    padding-block: var(--px-lg);
+}
+
+.container {
+    --max-width:375px;
+    width: min(var(--max-width), 100% - var(--px-lg) * 2 );
+    margin-inline: auto;
+}
+
+.desktop-only {
+    display: none;
 }
 
 .even-columns {
@@ -39,16 +49,6 @@
     display: grid;
 }
 
-.container {
-    --max-width:375px;
-    width: min(var(--max-width), 100% - var(--px-lg) * 2 );
-    margin-inline: auto;
-}
-
-.desktop-only {
-    display: none;
-}
-
 @media (width >= 80em) {
     .container {
         --max-width: 80rem;
@@ -60,7 +60,7 @@
 
     .even-columns {
         grid-auto-flow: column;
-        grid-template-columns: 1fr;
+        grid-auto-columns: 1fr;
     }
     
 }
